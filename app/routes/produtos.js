@@ -25,6 +25,7 @@ module.exports = function(app) {
 
     app.post('/produtos', function(req, res) {
         var produto = req.body;
+        console.log(produto);
 
         var connection = app.infra.connectionFactory();
         var produtosDAO = new app.infra.ProdutosDAO(connection);
