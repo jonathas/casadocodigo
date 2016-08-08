@@ -24,4 +24,5 @@ var produto = {
     preco: 100
 };
 
+//A requisicao é enviada somente aqui
 client.end(JSON.stringify(produto));
