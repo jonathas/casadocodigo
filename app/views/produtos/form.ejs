@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+    </head>
+    <body>
+        <form action="/produtos/salva" method="post">
+            <div>
+                <label for="titulo">Titulo</label>
+                <input type="text" id="titulo" name="titulo" placeholder="Coloque o titulo">
+            </div>
+            <div>
+                <label for="preco">Preco</label>
+                <input type="text" id="preco" name="preco" placeholder="Coloque o preco">
+            </div>
+            <div>
+                <label for="descricao">Descricao</label>
+                <textarea cols="20" rows="10" id="descricao" name="descricao" placeholder="Fale sobre o livro"></textarea>
+            </div>
+
+            <input type="submit" value="gravar">
+        </form>
+    </body>
+</html>
