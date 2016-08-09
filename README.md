@@ -21,17 +21,22 @@ Para os dois bancos:
 $ mysql -uroot -proot casadocodigo_nodejs < /config/sql/create_table_livros.sql
 ```
 
+Instale as dependencias:
+
 ```bash
 $ npm install
 ```
 
+Instale e rode o nodemon no seu sistema:
+
 ```bash
+$ sudo npm install -g nodemon
 $ nodemon app
 ```
 
 #Para rodar os testes
 
 ```bash
-NODE_ENV=test node_modules/mocha/bin/mocha
+$ NODE_ENV=test node_modules/mocha/bin/mocha
 ```
 Obs: Não é necessário que o node esteja rodando para isso, pois ele já inicia o node
