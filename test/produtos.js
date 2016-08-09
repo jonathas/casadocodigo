@@ -1,20 +1,13 @@
 // Testes com Mocha. Rodar: $ node_modules/mocha/bin/mocha
-var http = require('http');
+//Com isso nao preciso mais subir o servidor para rodar o teste
+var express = require('../config/express')();
+var request = require('supertest')(express);
 var assert = require('assert');
 describe('#ProdutosController', function() {
     it('listagem json', function(done) {
-        var configuracoes = {
-            hostname: 'localhost',
-            port: 3000,
-            path: '/produtos',
-            headers: {
-                'Accept':'application/json'
-            }
-        };
-        http.get(configuracoes, function(res) {
-            assert.equal(res.statusCode, 200);
-            assert.equal(res.headers['content-type'],'application/json; charset=utf-8');
-            done();
-        });
+        request.get('/produtos')
+        .set('Accept','application/json')
+        .expect('Content-Type',/json/)
+        .expect(200, done);
     });
 });
