@@ -18,7 +18,7 @@ Para os dois bancos:
 - Importar populate_table_livros.sql de /config/sql/
 
 ```bash
-$ mysql -uroot -proot casadocodigo_nodejs < /config/sql/create_table_livros.sql
+$ mysql -uroot -proot casadocodigo_nodejs < config/sql/create_table_livros.sql
 ```
 
 Instale as dependencias:
