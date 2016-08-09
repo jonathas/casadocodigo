@@ -39,4 +39,4 @@ $ nodemon app
 ```bash
 $ NODE_ENV=test node_modules/mocha/bin/mocha
 ```
-Obs: Não é necessário que o node esteja rodando para isso, pois ele já inicia o node
+Obs: Não é necessário que o node esteja rodando para isso, pois o teste já inicia tudo que é necessário
