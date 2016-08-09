@@ -1,5 +1,5 @@
 // Testes com Mocha. Rodar: $ NODE_ENV=test node_modules/mocha/bin/mocha
-//Com isso nao preciso mais subir o servidor para rodar o teste
+// Com isso nao preciso mais subir o servidor antes de rodar o teste
 var express = require('../config/express')();
 var request = require('supertest')(express);
 
