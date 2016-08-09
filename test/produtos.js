@@ -2,8 +2,19 @@
 //Com isso nao preciso mais subir o servidor para rodar o teste
 var express = require('../config/express')();
 var request = require('supertest')(express);
-var assert = require('assert');
+
 describe('#ProdutosController', function() {
+    beforeEach(function(done) {
+        var conn = express.infra.connectionFactory();
+        // Para quando precisar fazer isso pra mais de uma tabela, existe um pacote
+        // desenvolvido por um brasileiro chamado node-database-cleaner
+        conn.query("truncate livros", function(ex, result) {
+            if (!ex) {
+                done();
+            }
+        });
+    });
+
     it('#listagem json', function(done) {
         request.get('/produtos')
             .set('Accept', 'application/json')
