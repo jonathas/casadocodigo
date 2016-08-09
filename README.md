@@ -13,6 +13,7 @@ create schema casadocodigo_nodejs;
 ```
 
 Para os dois bancos:
+
 - Importar create_table_livros.sql de /config/sql/
 - Importar populate_table_livros.sql de /config/sql/
 
