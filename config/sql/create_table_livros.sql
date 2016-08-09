@@ -1,4 +1,4 @@
-CREATE TABLE IF NOT EXISTS `casadocodigo_nodejs`.`livros` (
+CREATE TABLE IF NOT EXISTS `livros` (
   `id` INT(11) NOT NULL AUTO_INCREMENT,
   `titulo` VARCHAR(255) NULL DEFAULT NULL,
   `descricao` TEXT NULL DEFAULT NULL,
