@@ -20,7 +20,7 @@ module.exports = function(app) {
     });
 
     app.get('/produtos/form', function(req, res) {
-        res.render('produtos/form',{errosValidacao:{}});
+        res.render('produtos/form',{errosValidacao:{}, produto:{}});
     });
 
     app.post('/produtos', function(req, res) {
