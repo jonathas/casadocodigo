@@ -20,6 +20,18 @@ var connectMySQL = function() {
         });
     }
 
+    if (process.env.NODE_ENV == 'production') {
+        // Heroku - https://heroku.com
+        var urlDeConexao = process.env.CLEARDB_DATABASE_URL;
+        var grupos = urlDeConexao.match(/mysql:\/\/(.*):(.*)@(.*)\/(.*)\?reconnect=true/);
+        return mysql.createConnection({
+            host: grupos[3],
+            user: grupos[1],
+            password: grupos[2],
+            database: grupos[4]
+        });
+    }
+
 };
 
 //wrapper
