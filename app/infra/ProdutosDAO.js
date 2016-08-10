@@ -12,8 +12,10 @@ ProdutosDAO.prototype.lista = function(callback) {
 	  		throw err;
             return;
 	  	}
-        connection.query('select * from livros', callback);
-        connection.release();
+        connection.query('select * from livros', function(erros, results) {
+            connection.release();
+            callback(erros,results);
+        });
     });
 };
 
@@ -27,8 +29,10 @@ ProdutosDAO.prototype.salva = function(produto, callback) {
 	  		throw err;
             return;
 	  	}
-        connection.query('insert into livros set ?', produto, callback);
-        connection.release();
+        connection.query('insert into livros set ?', produto, function(erros, results) {
+            connection.release();
+            callback(erros,results);
+        });
     });
 };
 
