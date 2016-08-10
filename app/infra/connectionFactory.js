@@ -35,7 +35,6 @@ function _criaPool() {
             database: grupos[4]
         });
     }
-    console.log("===== Iniciando o pool =====");
 
     // Se a fila ta cheia
     pool.on('enqueue', function () {

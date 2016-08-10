@@ -5,13 +5,14 @@ var request = require('supertest')(express);
 
 describe('#ProdutosController', function() {
     beforeEach(function(done) {
-        var conn = express.infra.connectionFactory();
-        /* Para quando precisar fazer isso pra mais de uma tabela, existe um pacote
-        desenvolvido por um brasileiro chamado node-database-cleaner */
-        conn.query("truncate livros", function(ex, result) {
-            if (!ex) {
-                done();
-            }
+        /* Para quando precisar fazer isso pra mais de uma tabela, existe uma lib desenvolvida por um brasileiro chamada node-database-cleaner */
+        express.infra.connectionFactory(function(err, connection) {
+            connection.query('truncate livros', function(erros, results) {
+                connection.release();
+                if (!erros) {
+                    done();
+                }
+            });
         });
     });
 
