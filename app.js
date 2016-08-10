@@ -12,5 +12,5 @@ var porta = process.env.PORT || 3000;
 
 // Mudado de app para http por causa do Socket.io
 http.listen(porta, function() {
-    console.log("Servidor está rodando no heroku");
+    console.log("Servidor está rodando");
 });

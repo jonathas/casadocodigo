@@ -16,9 +16,8 @@ module.exports = function(app) {
                     res.json(results);
                 }
             });
+            connection.end();
         });
-
-        connection.end();
     });
 
     app.get('/produtos/form', function(req, res) {
@@ -48,10 +47,9 @@ module.exports = function(app) {
         var produtosDAO = new app.infra.ProdutosDAO(connection);
 
         produtosDAO.salva(produto, function(err, results) {
+            connection.end();
             //always redirect after post
             res.redirect('/produtos');
         });
-
-        connection.end();
     });
 };

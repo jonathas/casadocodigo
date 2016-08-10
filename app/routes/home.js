@@ -15,8 +15,8 @@ module.exports = function(app) {
                     res.json(results);
                 }
             });
+            connection.end();
         });
 
-        connection.end();
     });
 };
