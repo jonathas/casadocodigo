@@ -28,7 +28,7 @@ var connectMySQL = function(callback) {
         var urlDeConexao = process.env.CLEARDB_DATABASE_URL;
         var grupos = urlDeConexao.match(/mysql:\/\/(.*):(.*)@(.*)\/(.*)\?reconnect=true/);
         pool =  mysql.createPool({
-            connectionLimit: 100,
+            connectionLimit: 10,
             host: grupos[3],
             user: grupos[1],
             password: grupos[2],
