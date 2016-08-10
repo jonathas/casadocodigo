@@ -48,7 +48,7 @@ $ sudo pacman -S siege # caso você utilize o Arch Linux ou derivados
 ```
 
 ```bash
-$ sudo apt-get install siege # caso você não tenhe experimentado o Arch Linux ainda :D
+$ sudo apt-get install siege # caso você não tenha experimentado o Arch Linux ainda :D
 ```
 
 E rode com 10 ou mais conexões simultâneas por 1 minuto
