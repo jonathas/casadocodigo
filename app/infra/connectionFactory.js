@@ -42,7 +42,7 @@ var connectMySQL = function(callback) {
         if(err) {
           return callback(err);
         }
-        callback(null, connection);
+        return callback(null, connection);
     });
 
 };
