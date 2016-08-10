@@ -1,8 +1,7 @@
 module.exports = function(app) {
 
     app.get('/produtos', function(req,res,next) {
-        var connection = app.infra.connectionFactory();
-        var produtosDAO = new app.infra.ProdutosDAO(connection);
+        var produtosDAO = new app.infra.ProdutosDAO(app);
 
         produtosDAO.lista(function(erros, results) {
             if(erros) {
@@ -18,8 +17,6 @@ module.exports = function(app) {
             });
 
         });
-
-        connection.end();
     });
 
     app.get('/produtos/form', function(req, res) {
@@ -45,14 +42,11 @@ module.exports = function(app) {
             return;
         }
 
-        var connection = app.infra.connectionFactory();
-        var produtosDAO = new app.infra.ProdutosDAO(connection);
+        var produtosDAO = new app.infra.ProdutosDAO(app);
 
         produtosDAO.salva(produto, function(err, results) {
             //always redirect after post
             res.redirect('/produtos');
         });
-
-        connection.end();
     });
 };
