@@ -4,12 +4,9 @@ function ProdutosDAO(app) {
 
 ProdutosDAO.prototype.lista = function(callback) {
     this._app.infra.connectionFactory(function(err, connection) {
-        if (err) {
-	  		console.log(' Error getting mysql_pool connection: ' + err);
-	  		throw err;
-	  	}
         connection.query('select * from livros', function(erros, results) {
             connection.release();
+            console.log("Connection released");
             callback(erros,results);
         });
     });
@@ -17,12 +14,9 @@ ProdutosDAO.prototype.lista = function(callback) {
 
 ProdutosDAO.prototype.salva = function(produto, callback) {
     this._app.infra.connectionFactory(function(err, connection) {
-        if (err) {
-	  		console.log(' Error getting mysql_pool connection: ' + err);
-	  		throw err;
-	  	}
         connection.query('insert into livros set ?', produto, function(erros, results) {
             connection.release();
+            console.log("Connection released");
             callback(erros,results);
         });
     });

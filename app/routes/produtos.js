@@ -3,9 +3,10 @@ module.exports = function(app) {
     app.get('/produtos', function(req,res,next) {
         var produtosDAO = new app.infra.ProdutosDAO(app);
 
-        produtosDAO.lista(function(erros, results) {
-            if(erros) {
-                return next(erros);
+        produtosDAO.lista(function(err, results) {
+            if(err) {
+                console.log("Erro: ", err);
+                return;
             }
             res.format({
                 html: function() {
