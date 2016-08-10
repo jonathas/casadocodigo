@@ -1,7 +1,7 @@
 module.exports = function(app) {
     app.get('/promocoes/form',function(req,res,next) {
-        var connection = app.infra.connectionFactory();
-        var produtosDAO = new app.infra.ProdutosDAO(connection);
+        //var connection = app.infra.connectionFactory();
+        var produtosDAO = new app.infra.ProdutosDAO(app);
 
         produtosDAO.lista(function(erros, results) {
             if(erros) {
@@ -15,9 +15,9 @@ module.exports = function(app) {
                     res.json(results);
                 }
             });
-            connection.end();
         });
 
+        //connection.end();
     });
 
     app.post('/promocoes', function(req,res) {

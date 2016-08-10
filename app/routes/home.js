@@ -1,7 +1,6 @@
 module.exports = function(app) {
     app.get('/', function(req,res,next) {
-        var connection = app.infra.connectionFactory();
-        var produtosDAO = new app.infra.ProdutosDAO(connection);
+        var produtosDAO = new app.infra.ProdutosDAO(app);
 
         produtosDAO.lista(function(erros, results) {
             if(erros) {
@@ -15,8 +14,6 @@ module.exports = function(app) {
                     res.json(results);
                 }
             });
-            connection.end();
         });
-
     });
 };
