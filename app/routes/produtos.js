@@ -51,5 +51,7 @@ module.exports = function(app) {
             //always redirect after post
             res.redirect('/produtos');
         });
+
+        connection.end();
     });
 };
