@@ -9,7 +9,7 @@ function _handleDisconnect() {
     connection.connect(function(err) { // The server is either down
         if (err) { // or restarting (takes a while sometimes).
             console.log('error when connecting to db:', err);
-            setTimeout(handleDisconnect, 2000); // We introduce a delay before attempting to reconnect,
+            setTimeout(_handleDisconnect, 2000); // We introduce a delay before attempting to reconnect,
             // to avoid a hot loop, and to allow our node script to
         } else {
             return connection;
@@ -19,7 +19,7 @@ function _handleDisconnect() {
     connection.on('error', function(err) {
             console.log('db error', err);
             if (err.code === 'PROTOCOL_CONNECTION_LOST') { // Connection to the MySQL server is usually
-                handleDisconnect(); // lost due to either server restart, or a
+                _handleDisconnect(); // lost due to either server restart, or a
             } else { // connnection idle timeout (the wait_timeout
                 throw err; // server variable configures this)
             }
