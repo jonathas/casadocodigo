@@ -38,7 +38,7 @@ function _criaPool() {
 
     // Se a fila ta cheia
     pool.on('enqueue', function () {
-        console.error('Waiting for available connection slot');
+        //console.error('Waiting for available connection slot');
     });
 }
 
