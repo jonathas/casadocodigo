@@ -41,7 +41,23 @@ $ NODE_ENV=test node_modules/mocha/bin/mocha
 ```
 Obs: Não é necessário que o node esteja rodando para isso, pois o teste já inicia tudo que é necessário
 
-- Para http load test, use o siege através do comando:
+- Para http load test, instale o siege:
+
+```bash
+$ sudo pacman -S siege # caso você utilize o Arch Linux ou derivados
+```
+
+```bash
+$ sudo apt-get install siege # caso você não tenha experimentado o Arch Linux ainda :D
+```
+
+E rode com 10 ou mais conexões simultâneas por 1 minuto
+
+```bash
+$ siege -c10 -t1M http://localhost:3000
+```
+
+ou utilize o siege instalado pelo npm:
 
 ```bash
 $ node test/benchmark.js
