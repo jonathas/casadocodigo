@@ -75,4 +75,5 @@ Front-end:
 
 - Angular com Typescript
 - SASS
-- Grunt
+- Bower
+- Gulp
