@@ -57,9 +57,22 @@ E rode com 10 ou mais conexões simultâneas por 1 minuto
 $ siege -c10 -t1M http://localhost:3000
 ```
 
-# TODO (Coisas que não fazem parte do curso)
+# TODO
 
-- Automatizar isso tudo com Docker
+Aqui são coisas que não fazem parte do curso, mas quero fazer para praticar:
+
+- Automatizar isso tudo com Docker (Nginx, MySQL)
+- Renomear tudo pra inglês pra ficar mais acessível (?)
+- Implementar mais testes para as próximas coisas que quero desenvolver na aplicação
+- Implementar Sequelize
 - Implementar autenticação com o Passport
-- Implementar layout nas áreas de administração
-- Implementar delete e update
+- Implementar layout com Bootstrap nas áreas de administração
+- Implementar delete e update nos produtos, via form e via API recebendo token
+- Implementar CI com o Travis ou Codeship
+
+
+Front-end:
+
+- Angular com Typescript
+- SASS
+- Grunt
